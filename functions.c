@@ -63,7 +63,7 @@ void addBook() {
     BOOK* nBook = (BOOK*)malloc(sizeof(BOOK));
     if (nBook == NULL) {
         printf("Error");
-        return;
+        return 1;
     }
 
     printf("Enter name of author: ");
@@ -130,7 +130,7 @@ void authorPrint() {
 
     if (sBook == NULL) {
         printf("Error");
-        return;
+        return 1;
     }
 
     printf("Enter author's name: ");
@@ -176,7 +176,7 @@ void genrePrint() {
     BOOK* sBook = (BOOK*)malloc(n * sizeof(BOOK));
     if (sBook == NULL) {
         printf("Error");
-        return;
+        return 1;
     }
     printf("Enter genre name: ");
     scanf(" %29[^\n]", genre);
@@ -227,7 +227,7 @@ void printBooks() {
     pBook = (BOOK*)malloc(n * sizeof(BOOK));
     if (pBook == NULL) {
         printf("Error");
-        return;
+        return 1;
     }
     fread(pBook, sizeof(BOOK), n, fp);
 
@@ -297,7 +297,7 @@ void bookSearch() {
     BOOK* sBook = (BOOK*)malloc(n * sizeof(BOOK));
     if (sBook == NULL) {
         printf("Error");
-        return;
+        return 1;
     }
     printf("Enter book name: ");
     scanf(" %29[^\n]", searchedWord);
@@ -341,7 +341,7 @@ void deleteBook() {
         dBook = (BOOK*)malloc(n * sizeof(BOOK));
         if (dBook == NULL) {
             printf("Error");
-            return;
+            return 1;
         }
         else {
             fread(dBook, sizeof(BOOK), n, fp);
@@ -404,7 +404,7 @@ void searchInRepository() {
     BOOK* sBook = (BOOK*)malloc(n * sizeof(BOOK));
     if (sBook == NULL) {
         printf("Error");
-        return;
+        return 1;
     }
     printf("Enter searched word: ");
     scanf(" %29[^\n]", searchedWord);
